@@ -13,6 +13,7 @@
 <br>
 <br>
 
+
 ## 웹팩 시작 방법
 터미널에 다음과 같은 명령어 입력(node.js 설치 필수)
 ```
@@ -27,6 +28,10 @@ npm install -D webpack webpack-cli
 npx webpack --entry ./src/index.js(입력파일) --output-path ./dist(출력폴더)
 ```
 
+<br>
+<br>
+
+
 ## 웹팩 설정 방법
 root폴더에 webpack.config.js 파일 생성
 
@@ -37,6 +42,9 @@ webpack.config.js 파일에다 entry, output 설정(webpack.config.js 참조)
 npx webpack --config webpack.config.js 또는
 npx webpack(위 명령어와 같다)
 ```
+<br>
+<br>
+
 
 ## mode 설정 방법
 
@@ -78,4 +86,17 @@ mode = 'production': 'none' | 'development' | 'production'
 [자세한 사항은 이곳을 참조](https://webpack.kr/configuration/mode/#root)
 </details>
 
+<br>
+<br>
 
+## loader 설정 방법
+
+<details>
+css파일을 웹팩으로 갖고올 때 필요한 모듈들을 설치한다.
+
+```
+npm i -D css-loader style-loader
+```
+
+그 다음 webpack.config.js 에서 module 설정을 한다.(이 부분은 webpack.config.js 참조)
+</details>
