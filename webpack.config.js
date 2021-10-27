@@ -1,7 +1,11 @@
 const path = require('path'); // 파일의 경로를 쉽게 핸들링할 수 있는 부품
 module.exports = {
   mode: 'development', // default값은 production이다. development의 코드들은 정교하지만 production의 코드들은 간단하다.
-  entry: './src/index.js', // 입력 파일
+  entry: {
+    // 입력값이 여러개일 경우 object로 감싸준다
+    index: './src/index.js', // 입력 파일
+    about: './src/about.js',
+  },
   module: {
     rules: [
       {
@@ -18,6 +22,7 @@ module.exports = {
   output: {
     // 출력 파일
     path: path.resolve(__dirname, 'dist'), // __dirname은 현재 webpack.config.js 파일이 있는 위치를 말한다. 그리고 그 경로의 dist폴더에 결과물을 넣겠다. 라는 뜻이다.
-    filename: 'main.js', // 그 dist 폴더에 main.js 파일로 지정한다
+    filename: '[name].js', // 그 dist 폴더에 main.js 파일로 지정한다
+    // [name]은 각 입력 파일에 키값이 여기에 들어간다. 즉 npx webpack을 하면 dist폴더에 index.js, about.js가 생성된다.
   },
 };
