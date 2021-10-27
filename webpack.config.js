@@ -1,5 +1,6 @@
 const path = require('path'); // 파일의 경로를 쉽게 핸들링할 수 있는 부품
 module.exports = {
+  mode: 'development', // default값은 production이다. development의 코드들은 정교하지만 production의 코드들은 간단하다.
   entry: './src/index.js', // 입력 파일
   output: {
     // 출력 파일

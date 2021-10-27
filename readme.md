@@ -37,3 +37,45 @@ webpack.config.js 파일에다 entry, output 설정(webpack.config.js 참조)
 npx webpack --config webpack.config.js 또는
 npx webpack(위 명령어와 같다)
 ```
+
+## mode 설정 방법
+
+<details>
+mode를 통하여 ebpack에 내장된 최적화 기능을 사용할 수 있습니다.
+
+```
+module.exports = {
+  mode: 'development',
+};
+```
+
+mode = 'production': 'none' | 'development' | 'production'
+
+<style>
+    table{
+        border:gray 1px solid
+    }
+</style>
+<table>
+    <tr>
+        <th>옵션</th>
+        <th>설명</th>
+    </tr>
+    <tr>
+        <td>development</td>
+        <td>DefinePlugin의 process.env.NODE_ENV를 development로 설정합니다. 모듈과 청크에 유용한 이름을 사용할 수 있습니다.</td>
+    </tr>
+    <tr>
+        <td>production</td>
+        <td>DefinePlugin의 process.env.NODE_ENV를 production으로 설정합니다. 모듈과 청크, FlagDependencyUsagePlugin, FlagIncludedChunksPlugin, ModuleConcatenationPlugin, NoEmitOnErrorsPlugin, TerserPlugin 등에 대해 결정적 망글이름(mangled name)을 사용할 수 있습니다.</td>
+    </tr>
+    <tr>
+        <td>none</td>
+        <td>기본 최적화 옵션에서 제외</td>
+    </tr>
+</table>
+
+[자세한 사항은 이곳을 참조](https://webpack.kr/configuration/mode/#root)
+</details>
+
+
