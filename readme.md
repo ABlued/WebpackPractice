@@ -26,3 +26,14 @@ npm install -D webpack webpack-cli
 ```
 npx webpack --entry ./src/index.js(입력파일) --output-path ./dist(출력폴더)
 ```
+
+## 웹팩 설정 방법
+root폴더에 webpack.config.js 파일 생성
+
+webpack.config.js 파일에다 entry, output 설정(webpack.config.js 참조)
+
+설정이 완료되면 터미널에 웹팩 명령어 입력
+```
+npx webpack --config webpack.config.js 또는
+npx webpack(위 명령어와 같다)
+```
