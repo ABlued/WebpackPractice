@@ -90,8 +90,10 @@ mode = 'production': 'none' | 'development' | 'production'
 <br>
 
 ## loader 설정 방법
+<br>
 
-<details>
+loader는 웹팩이 리소스를 번들링하는 과정에서 적용하는 옵션들이다.
+
 css파일을 웹팩으로 갖고올 때 필요한 모듈들을 설치한다.
 
 ```
@@ -99,4 +101,22 @@ npm i -D css-loader style-loader
 ```
 
 그 다음 webpack.config.js 에서 module 설정을 한다.(이 부분은 webpack.config.js 참조)
-</details>
+
+## plugin 설정 방법
+<br>
+plugin은 loader의 옵션들을 적용한 후 만들어진 결과물에 씌워지는 옵션들이다
+번들링 시 html파일을 자동으로 생성하게 하고 싶은 플러그인을 설치한다.
+
+```
+npm i -D html-webpack-plugin
+```
+그 다음 webpack.config.js 에서 plugins 설정을 한다.(이 부분은 webpack.config.js 참조)
+
+<br>
+
+### 파일의 변경사항이 생길 때마다 웹팩이 자동으로 이를 감지하고 번들링해주는 명령어
+<br>
+
+```
+npx webpack --watch
+```

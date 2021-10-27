@@ -1,4 +1,6 @@
 const path = require('path'); // 파일의 경로를 쉽게 핸들링할 수 있는 부품
+let HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
   mode: 'development', // default값은 production이다. development의 코드들은 정교하지만 production의 코드들은 간단하다.
   entry: {
@@ -19,6 +21,18 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html', // 가져와야 하는 html파일
+      filename: './index.html', // dist폴더에 무슨 이름으로 생성할지 정한다.
+      chunks: ['index'], // 삽입하고 싶은 entry의 파일이름을 문자열로 적는다.
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/about.html', // 가져와야 하는 html파일
+      filename: './about.html', // dist폴더에 무슨 이름으로 생성할지 정한다.
+      chunks: ['about'], // 삽입하고 싶은 entry의 파일이름을 문자열로 적는다.
+    }),
+  ],
   output: {
     // 출력 파일
     path: path.resolve(__dirname, 'dist'), // __dirname은 현재 webpack.config.js 파일이 있는 위치를 말한다. 그리고 그 경로의 dist폴더에 결과물을 넣겠다. 라는 뜻이다.
