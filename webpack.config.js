@@ -2,7 +2,7 @@ const path = require('path'); // 파일의 경로를 쉽게 핸들링할 수 있
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'development', // default값은 production이다. development의 코드들은 정교하지만 production의 코드들은 간단하다.
+  mode: 'development', // default값은 production이다.
   entry: {
     // 입력값이 여러개일 경우 object로 감싸준다
     index: './src/index.js', // 입력 파일
